@@ -319,6 +319,7 @@ function searchUpdater() {
           />`;
 }
 const playing = (e) => {
+  main_body.style.marginBottom = "70px";
   songPlayer.innerHTML = `
   <div class="w-[100%] h-[60px] flex bg-[#F1F3F4] justify-between items-center">
   <div id="songinfo" class="flex h-[100%] items-center gap-[20px] ml-5">
