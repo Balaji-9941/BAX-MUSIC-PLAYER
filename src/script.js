@@ -290,7 +290,7 @@ function initialLoader() {
                   serif;
               "
             >
-              ${ele.title}
+              ${ele.title.slice(0, 10)}...
             </h1>
             <h1 class="h12 text-[12px]">${ele.author}</h1>
 
@@ -380,7 +380,7 @@ const searchSong = (e) => {
                   serif;
               "
             >
-              ${ele.title}
+              ${ele.title.slice(0, 10)}...
             </h1>
             <h1 class="text-[12px] h12">${ele.author}</h1>
 
