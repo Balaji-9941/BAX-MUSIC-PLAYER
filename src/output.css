@@ -8,9 +8,13 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-700: oklch(37.3% 0.034 259.733);
     --spacing: 0.25rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --radius-4xl: 2rem;
@@ -179,8 +183,8 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
-  .ml-3 {
-    margin-left: calc(var(--spacing) * 3);
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
   }
   .ml-3\.5 {
     margin-left: calc(var(--spacing) * 3.5);
@@ -190,9 +194,6 @@
   }
   .flex {
     display: flex;
-  }
-  .table {
-    display: table;
   }
   .h-\[35px\] {
     height: 35px;
@@ -233,12 +234,6 @@
   .w-\[200px\] {
     width: 200px;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -272,10 +267,6 @@
   .rounded-4xl {
     border-radius: var(--radius-4xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .border-0 {
     border-style: var(--tw-border-style);
     border-width: 0px;
@@ -293,11 +284,21 @@
   .bg-gray-200 {
     background-color: var(--color-gray-200);
   }
+  .bg-gray-700 {
+    background-color: var(--color-gray-700);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
   .text-center {
     text-align: center;
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .text-\[12px\] {
     font-size: 12px;
@@ -305,12 +306,8 @@
   .text-\[15px\] {
     font-size: 15px;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .text-amber-50 {
+    color: var(--color-amber-50);
   }
   .outline-0 {
     outline-style: var(--tw-outline-style);
