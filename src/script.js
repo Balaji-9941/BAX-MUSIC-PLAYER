@@ -283,15 +283,23 @@ function initialLoader() {
                 ></i>
               </div>
             </div>
-            <h1
+           ${
+             ele.title.length < 11
+               ? `<h1
               class="text-[15px] h11"
               style="
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
                   serif;
               "
-            >
-              ${ele.title.slice(0, 10)}...
-            </h1>
+            >${ele.title}</h1>`
+               : `<h1
+              class="text-[15px] h11"
+              style="
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+                  serif;
+              "
+            >${ele.title.slice(0, 10)}...</h1>`
+           }
             <h1 class="h12 text-[12px]">${ele.author}</h1>
 
           </div>
@@ -319,8 +327,18 @@ function searchUpdater() {
           />`;
 }
 const playing = (e) => {
-  main_body.style.marginBottom = "70px";
-  songPlayer.innerHTML = `
+  main_body.style.marginBottom = "120px";
+  player.innerHTML = `
+  <div id="mobile_song_info" class="flex w-[100%] h-[60px] bg-gray-700 items-center">
+  <div class="ml-2">
+  <img src=${data[e.target.id].img} alt=""  width="50px" class="rounded-4xl">
+  </div>
+  <div class="w-[100%]">
+  <marquee class="text-amber-50 text-xl font-sans">${
+    data[e.target.id].title
+  } by ${data[e.target.id].author}</marquee>
+  </div>
+  </div>
   <div class="w-[100%] h-[60px] flex bg-[#F1F3F4] justify-between items-center">
   <div id="songinfo" class="flex h-[100%] items-center gap-[20px] ml-5">
   <img src=${data[e.target.id].img} alt="" width="50px" class="rounded-4xl">
@@ -373,15 +391,25 @@ const searchSong = (e) => {
                 ></i>
               </div>
             </div>
-            <h1
+           
+              ${
+                ele.title.length < 11
+                  ? `<h1
               class="text-[15px] h11"
               style="
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
                   serif;
               "
-            >
-              ${ele.title.slice(0, 10)}...
-            </h1>
+            >${ele.title}</h1>`
+                  : `<h1
+              class="text-[15px] h11"
+              style="
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+                  serif;
+              "
+            >${ele.title.slice(0, 10)}...</h1>`
+              }
+           
             <h1 class="text-[12px] h12">${ele.author}</h1>
 
           </div>

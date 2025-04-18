@@ -71,3 +71,8 @@ body {
     width: 100vw;
   }
 }
+@media screen and (min-width: 801px) {
+  #mobile_song_info {
+    display: none;
+  }
+}
