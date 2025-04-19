@@ -374,7 +374,7 @@ const searchSong = (e) => {
 <div class="songs flex flex-col items-center m-3">
             <div
             id="${ele.id}"
-              class="img_part w-[130px] h-[130px] flex justify-around items-center "
+              class="img_part w-[130px] h-[130px] flex justify-around items-center rounded-2xl"
               onclick="playing.apply(this,arguments)"
           style="background-image: url(${ele.img});"
             >
