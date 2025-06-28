@@ -407,22 +407,22 @@ const searchSong = (e) => {
     );
   }
   main_body.innerHTML = resultData
-    .map((ele) => {
+    .map((ele, index) => {
       return `
 <div class="songs flex flex-col items-center m-3">
             <div
-            id="${ele.id}"
+            id="${index}"
               class="img_part w-[130px] h-[130px] flex justify-around items-center rounded-2xl"
               onclick="playing.apply(this,arguments)"
           style="background-image: url(${ele.img});"
             >
               <div
-                id="${ele.id}"
+                id="${index}"
                 class="play_btn w-[40px] h-[40px] rounded-4xl flex items-center justify-center bg-red-500"
                 
                 >
                 <i
-                id="${ele.id}"
+                id="${index}"
                   class="fa-solid fa-play fa-lg ml-3.5 mt-5"
                   style="color: #fff"
                   
