@@ -95,7 +95,7 @@ let data = [
     id: 11,
     img: "https://c.saavncdn.com/590/I-Tamil-2014-20190822153052-500x500.jpg",
     title: "Ennodu Nee Irundhal",
-    author: "A.R.Rahman",
+    author: "A.R.Rahman,A R Rahman,A R Rahuman,A.R.Rahuma",
     link: "https://github.com/user-attachments/assets/96ac84ca-85d4-41ed-bfb7-50cfefcc9cd2",
     count: "0",
   },
