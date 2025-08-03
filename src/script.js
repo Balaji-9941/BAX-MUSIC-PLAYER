@@ -1,9 +1,9 @@
 let main_body = document.getElementById("main_body");
 let player = document.getElementById("songPlayer");
 let info = document.getElementById("songinfo");
-let data = [
+
+let fullData = [
   {
-    id: 0,
     img: "https://tse4.mm.bing.net/th?id=OIP.AtAI0H9sQZpMmeRsGXHavQHaHa&pid=Api&P=0&h=180",
     title: "Kaavala,kavala",
     author: "Anirudh",
@@ -11,7 +11,6 @@ let data = [
     count: "0",
   },
   {
-    id: 1,
     img: "https://c.saavncdn.com/336/O-Kadhal-Kanmani-Tamil-2015-20200805153450-500x500.jpg",
     title:
       "Kaara Aatakara,Kara attakara,Kara atakara,KaaraAatakara,Karaattakara,Karaatakara",
@@ -20,7 +19,6 @@ let data = [
     count: "0",
   },
   {
-    id: 2,
     img: "https://c.saavncdn.com/929/Aayitha-Ezhutu-Tamil-2004-20190629140126-500x500.jpg",
     title: "Yaakai thiri,yakkai thiri,yakkaithiri,Yaakaithiri",
     author: "A.R.Rahman,A R Rahman,A R Rahuman,A.R.Rahuman",
@@ -28,7 +26,6 @@ let data = [
     count: "0",
   },
   {
-    id: 3,
     img: "https://c.saavncdn.com/934/Golden-Sparrow-From-Nilavuku-En-Mel-Ennadi-Kobam-Tamil-2024-20241116194614-500x500.jpg",
     title: "Golden Sparrow,GoldenSparrow",
     author: "G.V.Prakash,G V Prakash",
@@ -36,7 +33,6 @@ let data = [
     count: "0",
   },
   {
-    id: 4,
     img: "https://tse1.mm.bing.net/th?id=OIP.Ud9K_U03B7OsBaSFQP9bpQHaHa&pid=Api&P=0&h=180",
     title: "Hey Minnale,heyminnale,aminnale,a minnale",
     author: "G.V.Prakash,G V Prakash",
@@ -44,7 +40,6 @@ let data = [
     count: "0",
   },
   {
-    id: 5,
     img: "https://tse1.mm.bing.net/th?id=OIP.QGJJ1dBEaR3OXtE3MdYGEwHaHa&pid=Api&P=0&h=180",
     title: "Manasilayo",
     author: "Anirudh",
@@ -52,7 +47,6 @@ let data = [
     count: "0",
   },
   {
-    id: 6,
     img: "https://tse4.mm.bing.net/th?id=OIP.u-KZxbEXgLYQoWOfG1Cp5QHaHa&pid=Api&P=0&h=180",
     title: "Arabic Kuthu,ArabicKuthu",
     author: "Anirudh",
@@ -60,7 +54,6 @@ let data = [
     count: "0",
   },
   {
-    id: 7,
     img: "https://tse1.mm.bing.net/th?id=OIP.zbYhA0yQjDw0ByBCFRDhJAHaHa&pid=Api&P=0&h=180",
     title: "Boomi enna Suthudhe",
     author: "Anirudh",
@@ -68,7 +61,6 @@ let data = [
     count: "0",
   },
   {
-    id: 8,
     img: "https://tse2.mm.bing.net/th?id=OIP.afhGc8QJz2lK7dV7w5IxVQHaHa&pid=Api&P=0&h=180",
     title: "Thee Thalapathy",
     author: "Thaman S",
@@ -76,7 +68,6 @@ let data = [
     count: "0",
   },
   {
-    id: 9,
     img: "https://c.saavncdn.com/984/Paiya-Tamil-2010-20200620134043-500x500.jpg",
     title: "Adada Mazhaida",
     author: "Yuvan Shankar Raja",
@@ -84,7 +75,6 @@ let data = [
     count: "0",
   },
   {
-    id: 10,
     img: "https://c.saavncdn.com/274/Anegan-Tamil-2014-20190822152158-500x500.jpg",
     title: "Danga Maari Oodhari",
     author: "Harris Jeyaraj",
@@ -92,7 +82,6 @@ let data = [
     count: "0",
   },
   {
-    id: 11,
     img: "https://c.saavncdn.com/590/I-Tamil-2014-20190822153052-500x500.jpg",
     title: "Ennodu Nee Irundhal",
     author: "A.R.Rahman",
@@ -100,7 +89,6 @@ let data = [
     count: "0",
   },
   {
-    id: 12,
     img: "https://c.saavncdn.com/289/Pathu-Thala-Original-Motion-Picture-Soundtrack-Tamil-2023-20230320144505-500x500.jpg",
     title: "Pathu thala",
     author: "A.R.Rahman",
@@ -108,7 +96,6 @@ let data = [
     count: "0",
   },
   {
-    id: 13,
     img: "https://c.saavncdn.com/224/Flag-Anthem-Tamilaga-Vettri-Kazhagam-Tamil-2024-20240823142028-500x500.jpg",
     title: "TVK Flag Anthem",
     author: "Thalapathy Vijay",
@@ -116,7 +103,6 @@ let data = [
     count: "0",
   },
   {
-    id: 14,
     img: "https://tse1.mm.bing.net/th?id=OIP.XdFL2PZHy4rpvnphuZmASQHaHa&pid=Api&P=0&h=180",
     title: "Illuminati",
     author: "Susin Shyam",
@@ -124,7 +110,6 @@ let data = [
     count: "0",
   },
   {
-    id: 15,
     img: "https://c.saavncdn.com/113/Vidaamuyarchi-Tamil-2025-20250217133052-500x500.jpg",
     title: "Pathikichu",
     author: "Anirudh",
@@ -132,7 +117,6 @@ let data = [
     count: "0",
   },
   {
-    id: 16,
     img: "https://c.saavncdn.com/415/Leo-Original-Motion-Picture-Soundtrack-English-2023-20231019170311-500x500.jpg",
     title: "Baadas",
     author: "Anirudh",
@@ -140,7 +124,6 @@ let data = [
     count: "0",
   },
   {
-    id: 17,
     img: "https://c.saavncdn.com/492/Mersal-Tamil-2017-20170820120559-500x500.jpg",
     title: "Aalaporan Tamizhan",
     author: "A.R.Rahman",
@@ -148,7 +131,6 @@ let data = [
     count: "0",
   },
   {
-    id: 18,
     img: "https://c.saavncdn.com/377/Good-Night-Tamil-2023-20230520150605-500x500.jpg",
     title: "Naan Gaali",
     author: "Sean Roldan",
@@ -156,7 +138,6 @@ let data = [
     count: "0",
   },
   {
-    id: 19,
     img: "https://c.saavncdn.com/470/David-2012-500x500.jpg",
     title: "Kanave Kanave",
     author: "Anirudh",
@@ -164,7 +145,6 @@ let data = [
     count: "0",
   },
   {
-    id: 20,
     img: "https://c.saavncdn.com/304/Meesaya-Murukku-Tamil-2017-20170822060308-500x500.jpg",
     title: "Vadi pulla vadi",
     author: "Hip Hop Tamizha",
@@ -172,7 +152,6 @@ let data = [
     count: "0",
   },
   {
-    id: 21,
     img: "https://c.saavncdn.com/573/Kaththi-Tamil-2014-20230701133540-500x500.jpg",
     title: "Aathi",
     author: "Anirudh",
@@ -180,7 +159,6 @@ let data = [
     count: "0",
   },
   {
-    id: 22,
     img: "https://c.saavncdn.com/672/Matta-From-The-Greatest-Of-All-Time-Tamil-2024-20240831141002-500x500.jpg",
     title: "Matta",
     author: "Yuvan Shankar Raja",
@@ -188,7 +166,6 @@ let data = [
     count: "0",
   },
   {
-    id: 23,
     img: "https://c.saavncdn.com/651/Dheema-From-Love-Insurance-Kompany-Tamil-2024-20241015191442-500x500.jpg",
     title: "Dheema",
     author: "Anirudh",
@@ -196,7 +173,6 @@ let data = [
     count: "0",
   },
   {
-    id: 24,
     img: "https://c.saavncdn.com/485/Velaiyilla-Pattathari-2014-500x500.jpg",
     title: "Udhungada Sangu",
     author: "Anirudh",
@@ -204,7 +180,6 @@ let data = [
     count: "0",
   },
   {
-    id: 25,
     img: "https://tse2.mm.bing.net/th?id=OIP.LhjQbX9w-Nesk_npRWUfOwHaI3&pid=Api&P=0&h=180",
     title: "Ranjithame",
     author: "Thaman S",
@@ -212,7 +187,6 @@ let data = [
     count: "0",
   },
   {
-    id: 26,
     img: "https://tse4.mm.bing.net/th?id=OIP.FPjpUOVSJflctlyGeaELywHaHa&pid=Api&P=0&h=180",
     title: "Hukum",
     author: "Anirudh",
@@ -220,7 +194,6 @@ let data = [
     count: "0",
   },
   {
-    id: 27,
     img: "https://tse4.mm.bing.net/th?id=OIP.XKqEYmtXmOgtVmL390FpUAHaHa&pid=Api&P=0&h=180",
     title: "Naa Ready",
     author: "Anirudh",
@@ -228,7 +201,6 @@ let data = [
     count: "0",
   },
   {
-    id: 28,
     img: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ad/d4/0a/add40a42-ba24-88d0-b98d-8e288b5ea5d9/cover.jpg/800x800cc.jpg",
     title: "Makkamishi",
     author: "Harris Jeyaraj",
@@ -236,39 +208,21 @@ let data = [
     count: "0",
   },
   {
-    id: 29,
     img: "https://tse4.mm.bing.net/th?id=OIP.OrjelVpuIdielLYXBt6J5AHaHa&pid=Api&P=0&h=180",
     title: "Oh Shanthi Shanthi",
     author: "Harris Jeyaraj",
     link: "https://github.com/user-attachments/assets/a21f742e-815f-41f6-bb91-23619992f66c",
     count: "0",
   },
+
   {
-    id: 30,
-    img: "https://c.saavncdn.com/435/Don-Tamil-2022-20220512162818-500x500.jpg",
-    title: "Private Party",
-    author: "Anirudh",
-    link: "https://github.com/user-attachments/assets/a20da6b8-6eac-4318-ab64-2978ad3f0746",
+    img: "https://a10.gaanacdn.com/gn_img/song/D0PKLrWGl9/PKL2kLGJWG/size_l_1562750622.webp",
+    title: "Thaarame Thaarame",
+    author: "Ghibran",
+    link: "https://github.com/user-attachments/assets/1c2ace24-4027-4493-81b2-d6db69de233b",
     count: "0",
   },
   {
-    id: 31,
-    img: "https://tse3.mm.bing.net/th?id=OIP.thUkR3bqcRRX0FG0VTR-DwAAAA&pid=Api&P=0&h=180",
-    title: "Chellama",
-    author: "Anirudh",
-    link: "https://github.com/user-attachments/assets/0c6b408b-a707-452f-b021-82e71efc826e",
-    count: "0",
-  },
-  {
-    id: 32,
-    img: "https://c.saavncdn.com/940/Enjoy-Enjaami-Tamil-2021-20240528125718-500x500.jpg",
-    title: "Enjoy Enjaami",
-    author: "Dhee, Arivu",
-    link: "https://github.com/user-attachments/assets/c8c4afae-53e8-4302-ada9-dab6b996467f",
-    count: "0",
-  },
-  {
-    id: 33,
     img: "https://c.saavncdn.com/349/Kanimaa-From-Retro-Tamil-2025-20250321121003-500x500.jpg",
     title: "Kanimaa",
     author: "Santhosh Narayanan",
@@ -276,7 +230,6 @@ let data = [
     count: "0",
   },
   {
-    id: 34,
     img: "https://c.saavncdn.com/590/I-Tamil-2014-20190822153052-500x500.jpg",
     title: "Mersalaayitten",
     author: "A.R.Rahman",
@@ -284,7 +237,6 @@ let data = [
     count: "0",
   },
   {
-    id: 35,
     img: "https://c.saavncdn.com/456/Enthiran-Tamil-2010-500x500.jpg",
     title: "Irumbile Oru Idhaiyam",
     author: "A.R.Rahman",
@@ -292,23 +244,27 @@ let data = [
     count: "0",
   },
   {
-    id: 36,
-    img: "https://c.saavncdn.com/478/Ghilli-Tamil-2004-20240808165324-500x500.jpg",
-    title: "Kokkara Kokkarako",
-    author: "Vidyasagar",
-    link: "https://github.com/user-attachments/assets/dd5f4fb3-bc2e-495a-9c23-ad8285ec978f",
+    img: "https://c.saavncdn.com/435/Don-Tamil-2022-20220512162818-500x500.jpg",
+    title: "Private Party",
+    author: "Anirudh",
+    link: "https://github.com/user-attachments/assets/a20da6b8-6eac-4318-ab64-2978ad3f0746",
     count: "0",
   },
   {
-    id: 37,
-    img: "https://c.saavncdn.com/880/Thug-Life-Tamil-Tamil-2025-20250604103629-500x500.jpg",
-    title: "Muththa Mazhai",
-    author: "A.R.Rahman",
-    link: "https://github.com/user-attachments/assets/fd5be511-163c-4c5e-b5cb-274e9c61d6e7",
+    img: "https://tse3.mm.bing.net/th?id=OIP.thUkR3bqcRRX0FG0VTR-DwAAAA&pid=Api&P=0&h=180",
+    title: "Chellama",
+    author: "Anirudh",
+    link: "https://github.com/user-attachments/assets/0c6b408b-a707-452f-b021-82e71efc826e",
     count: "0",
   },
   {
-    id: 38,
+    img: "https://c.saavncdn.com/940/Enjoy-Enjaami-Tamil-2021-20240528125718-500x500.jpg",
+    title: "Enjoy Enjaami",
+    author: "Dhee, Arivu",
+    link: "https://github.com/user-attachments/assets/c8c4afae-53e8-4302-ada9-dab6b996467f",
+    count: "0",
+  },
+  {
     img: "https://c.saavncdn.com/432/Naadodigal-Tamil-2009-20200714115717-500x500.jpg",
     title: "Aadunga da",
     author: "Sundar C Babu",
@@ -316,7 +272,6 @@ let data = [
     count: "0",
   },
   {
-    id: 39,
     img: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8a/68/33/8a6833ad-7788-778e-e896-5258f8c1a95f/8903431853622_cover.jpg/1200x1200bf-60.jpg",
     title: "Naatu Koothu",
     author: "M. M. Keeravani",
@@ -324,7 +279,6 @@ let data = [
     count: "0",
   },
   {
-    id: 40,
     img: "https://c.saavncdn.com/658/Ayan-Tamil-2022-20220413100432-500x500.jpg",
     title: "Pala Palakura",
     author: "Hariharan",
@@ -332,15 +286,33 @@ let data = [
     count: "0",
   },
   {
-    id: 41,
-    img: "https://a10.gaanacdn.com/gn_img/song/D0PKLrWGl9/PKL2kLGJWG/size_l_1562750622.webp",
-    title: "Thaarame Thaarame",
-    author: "Ghibran",
-    link: "https://github.com/user-attachments/assets/1c2ace24-4027-4493-81b2-d6db69de233b",
+    img: "https://c.saavncdn.com/478/Ghilli-Tamil-2004-20240808165324-500x500.jpg",
+    title: "Kokkara Kokkarako",
+    author: "Vidyasagar",
+    link: "https://github.com/user-attachments/assets/dd5f4fb3-bc2e-495a-9c23-ad8285ec978f",
+    count: "0",
+  },
+  {
+    img: "https://c.saavncdn.com/880/Thug-Life-Tamil-Tamil-2025-20250604103629-500x500.jpg",
+    title: "Muththa Mazhai",
+    author: "A.R.Rahman",
+    link: "https://github.com/user-attachments/assets/fd5be511-163c-4c5e-b5cb-274e9c61d6e7",
     count: "0",
   },
 ];
+var data = [{}];
+fullData.map((ele, index) => {
+  data[index] = {
+    id: index,
+    img: ele.img,
+    title: ele.title,
+    author: ele.author,
+    link: ele.link,
+    count: ele.count,
+  };
+});
 function initialLoader() {
+  console.log(data);
   main_body.innerHTML = data
     .map((ele, index) => {
       let ele_title = ele.title.split(",");
@@ -417,30 +389,72 @@ function searchUpdater() {
 }
 const playing = (e) => {
   main_body.style.marginBottom = "120px";
+  let ele_title = data[e.target.id].title.split(",");
+  let ele_author = data[e.target.id].author.split(",");
   player.innerHTML = `
   <div id="mobile_song_info" class="flex w-[100%] h-[60px] bg-gray-700 items-center">
   <div class="ml-2">
   <img src=${data[e.target.id].img} alt=""  width="50px" class="rounded-4xl">
   </div>
   <div class="w-[100%]">
-  <marquee class="text-amber-50 text-xl font-sans">${
-    data[e.target.id].title
-  } by ${data[e.target.id].author}</marquee>
+  <marquee class="text-amber-50 text-xl font-sans">${ele_title[0]} by ${
+    ele_author[0]
+  }</marquee>
   </div>
   </div>
   <div class="w-[100%] h-[60px] flex bg-[#F1F3F4] justify-between items-center">
   <div id="songinfo" class="flex h-[100%] items-center gap-[20px] ml-5">
   <img src=${data[e.target.id].img} alt="" width="50px" class="rounded-4xl">
   <div>
-  <h1>Song: ${data[e.target.id].title}</h1>
-  <h1>Author: ${data[e.target.id].author}</h1>
+  <h1>Song: ${ele_title[0]}</h1>
+  <h1>Author: ${ele_author[0]}</h1>
   </div>
   </div>
   <div h-[100%] w-[100%]>
-    <audio id="songnav"  class="w-[63vw]" controls autoplay loop>
+    <audio id="songnav"  class="w-[63vw]" controls autoplay>
   <source src=${data[e.target.id].link} type="audio/ogg">
 </audio></div></div>
 `;
+  let newindex = parseInt(e.target.id);
+  newindex = newindex + 1;
+  let songNav = document.getElementById("songnav");
+  songNav.addEventListener("ended", () => {
+    playerforindex(newindex);
+  });
+};
+const playerforindex = (index) => {
+  if (index === 41 || index === 42) index = 0;
+  let ele_title = data[index].title.split(",");
+  let ele_author = data[index].author.split(",");
+  main_body.style.marginBottom = "120px";
+  player.innerHTML = `
+  <div id="mobile_song_info" class="flex w-[100%] h-[60px] bg-gray-700 items-center">
+  <div class="ml-2">
+  <img src=${data[index].img} alt=""  width="50px" class="rounded-4xl">
+  </div>
+  <div class="w-[100%]">
+  <marquee class="text-amber-50 text-xl font-sans">${ele_title[0]} by ${ele_author[0]}</marquee>
+  </div>
+  </div>
+  <div class="w-[100%] h-[60px] flex bg-[#F1F3F4] justify-between items-center">
+  <div id="songinfo" class="flex h-[100%] items-center gap-[20px] ml-5">
+  <img src=${data[index].img} alt="" width="50px" class="rounded-4xl">
+  <div>
+  <h1>Song: ${ele_title[0]}</h1>
+  <h1>Author: ${ele_author[0]}</h1>
+  </div>
+  </div>
+  <div h-[100%] w-[100%]>
+    <audio id="songnav"  class="w-[63vw]" controls autoplay>
+  <source src=${data[index].link} type="audio/ogg">
+</audio></div></div>
+`;
+  let newindex = parseInt(index);
+  newindex = newindex + 1;
+  let songNav = document.getElementById("songnav");
+  songNav.addEventListener("ended", () => {
+    playerforindex(newindex);
+  });
 };
 const searchSong = (e) => {
   let opt = document.getElementById("search_select");
@@ -522,9 +536,9 @@ function recorder() {
   }
 
   var recognition = new SpeechRecognition();
-  recognition.lang = "en-US"; // You can change this to "hi-IN", "ta-IN", etc.
+  recognition.lang = "en-US";
 
-  searchBox1.placeH = "Listening... Speak now.";
+  searchBox1.value = "Listening... Speak now.";
   searchBox2.value = "Listening... Speak now.";
   recognition.start();
 
@@ -600,9 +614,5 @@ function recorder() {
 
   recognition.onerror = function (event) {
     alert("Error occurred: " + event.error);
-  };
-
-  recognition.onend = function () {
-    console.log("Recognition ended.");
   };
 }
