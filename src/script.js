@@ -5,7 +5,7 @@ let data = [
   {
     id: 0,
     img: "https://tse4.mm.bing.net/th?id=OIP.AtAI0H9sQZpMmeRsGXHavQHaHa&pid=Api&P=0&h=180",
-    title: "Kaavala",
+    title: "Kaavala,kavala",
     author: "Anirudh",
     link: "https://github.com/user-attachments/assets/28b56d0f-ea8a-41eb-91c3-ba25e75def11",
     count: "0",
@@ -13,32 +13,33 @@ let data = [
   {
     id: 1,
     img: "https://c.saavncdn.com/336/O-Kadhal-Kanmani-Tamil-2015-20200805153450-500x500.jpg",
-    title: "Kaara Aatakara",
-    author: "A.R.Rahman",
+    title:
+      "Kaara Aatakara,Kara attakara,Kara atakara,KaaraAatakara,Karaattakara,Karaatakara",
+    author: "A.R.Rahman,A R Rahman,A R Rahuman,A.R.Rahuman",
     link: "https://github.com/user-attachments/assets/6a584299-2390-449a-8482-cde1145263aa",
     count: "0",
   },
   {
     id: 2,
     img: "https://c.saavncdn.com/929/Aayitha-Ezhutu-Tamil-2004-20190629140126-500x500.jpg",
-    title: "Yaakai thiri",
-    author: "A.R.Rahman",
+    title: "Yaakai thiri,yakkai thiri,yakkaithiri,Yaakaithiri",
+    author: "A.R.Rahman,A R Rahman,A R Rahuman,A.R.Rahuman",
     link: " https://github.com/user-attachments/assets/793a52ff-231e-427c-b142-a11b5da9929c",
     count: "0",
   },
   {
     id: 3,
     img: "https://c.saavncdn.com/934/Golden-Sparrow-From-Nilavuku-En-Mel-Ennadi-Kobam-Tamil-2024-20241116194614-500x500.jpg",
-    title: "Golden Sparrow",
-    author: "G.V.Prakash",
+    title: "Golden Sparrow,GoldenSparrow",
+    author: "G.V.Prakash,G V Prakash",
     link: "https://github.com/user-attachments/assets/b9e2be71-62fb-485b-a4b4-47f037a22149",
     count: "0",
   },
   {
     id: 4,
     img: "https://tse1.mm.bing.net/th?id=OIP.Ud9K_U03B7OsBaSFQP9bpQHaHa&pid=Api&P=0&h=180",
-    title: "Hey Minnale",
-    author: "G.V.Prakash",
+    title: "Hey Minnale,heyminnale,aminnale,a minnale",
+    author: "G.V.Prakash,G V Prakash",
     link: "https://github.com/user-attachments/assets/8ef9607e-9a52-4fcf-bfca-76fc2ebfe6ab",
     count: "0",
   },
@@ -53,7 +54,7 @@ let data = [
   {
     id: 6,
     img: "https://tse4.mm.bing.net/th?id=OIP.u-KZxbEXgLYQoWOfG1Cp5QHaHa&pid=Api&P=0&h=180",
-    title: "Arabic Kuthu",
+    title: "Arabic Kuthu,ArabicKuthu",
     author: "Anirudh",
     link: "https://github.com/user-attachments/assets/64de11e8-7690-4939-ba15-21dd0eb36046",
     count: "0",
@@ -342,6 +343,8 @@ let data = [
 function initialLoader() {
   main_body.innerHTML = data
     .map((ele, index) => {
+      let ele_title = ele.title.split(",");
+      let ele_author = ele.author.split(",");
       return `
 <div class="songs flex flex-col items-center m-3">
             <div
@@ -364,23 +367,23 @@ function initialLoader() {
               </div>
             </div>
            ${
-             ele.title.length < 11
+             ele_title[0].length < 11
                ? `<h1
               class="text-[15px] h11"
               style="
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
                   serif;
               "
-            >${ele.title}</h1>`
+            >${ele_title[0]}</h1>`
                : `<h1
               class="text-[15px] h11"
               style="
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
                   serif;
               "
-            >${ele.title.slice(0, 10)}...</h1>`
+            >${ele_title[0].slice(0, 10)}...</h1>`
            }
-            <h1 class="h12 text-[12px]">${ele.author}</h1>
+            <h1 class="h12 text-[12px]">${ele_author[0]}</h1>
 
           </div>
 `;
@@ -393,18 +396,24 @@ function searchUpdater() {
   let inputs1 = document.getElementById("search");
   let inputs2 = document.getElementById("search_mobile");
   let options = document.getElementById("search_select");
-  inputs1.innerHTML = `<input
+  inputs1.innerHTML = `<div class="flex flex-row w-[100%] h-[35px]">
+               <input
+               id="searchbox1"
               type="text"
-              class="border-2 w-[100%] h-[35px] text-center bg-gray-200 rounded-3xl outline-0"
+              class="border-2 h-[35px] w-[90%] text-center bg-gray-200 outline-0 border-r-0 rounded-l-3xl"
               placeholder="Search by ${options.value}"
-              oninput="searchSong.apply(this,arguments)"
-            />`;
-  inputs2.innerHTML = `<input
+              oninput="searchSong.apply(this,arguments)"/>
+              <button class="h-[35px] w-[10%] bg-gray-400 outline-0 border-2 border-l-0 hover:cursor-pointer rounded-r-3xl" onclick="recorder()"><i class="fa-solid fa-microphone"></i></button>
+              </div>`;
+  inputs2.innerHTML = `<div class="flex flex-row w-[80%] h-[35px]">
+            <input
+            id="searchbox2"
             type="text"
-            class="border-2 w-[80%] h-[35px] text-center bg-gray-200 rounded-3xl"
+            class="border-2 h-[35px] w-[85%] text-center bg-gray-200 outline-0 border-r-0 rounded-l-3xl""
             oninput="searchSong.apply(this,arguments)"
-            placeholder="Search by ${options.value}"
-          />`;
+            placeholder="Search by ${options.value}"/>
+            <button class="h-[35px] w-[15%] bg-gray-400 outline-0 border-2 border-l-0 hover:cursor-pointer rounded-r-3xl" onclick="recorder()"><i class="fa-solid fa-microphone"></i></button>
+            </div>`;
 }
 const playing = (e) => {
   main_body.style.marginBottom = "120px";
@@ -450,6 +459,8 @@ const searchSong = (e) => {
   }
   main_body.innerHTML = resultData
     .map((ele) => {
+      let ele_title = ele.title.split(",");
+      let ele_author = ele.author.split(",");
       return `
 <div class="songs flex flex-col items-center m-3">
             <div
@@ -473,27 +484,125 @@ const searchSong = (e) => {
             </div>
            
               ${
-                ele.title.length < 11
+                ele_title[0].length < 11
                   ? `<h1
               class="text-[15px] h11"
               style="
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
                   serif;
               "
-            >${ele.title}</h1>`
+            >${ele_title[0]}</h1>`
                   : `<h1
               class="text-[15px] h11"
               style="
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
                   serif;
               "
-            >${ele.title.slice(0, 10)}...</h1>`
+            >${ele_title[0].slice(0, 10)}...</h1>`
               }
            
-            <h1 class="text-[12px] h12">${ele.author}</h1>
+            <h1 class="text-[12px] h12">${ele_author[0]}</h1>
 
           </div>
 `;
     })
     .join("");
 };
+function recorder() {
+  let opt = document.getElementById("search_select");
+  let searchBox1 = document.getElementById("searchbox1");
+  let searchBox2 = document.getElementById("searchbox2");
+  var SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    searchBox1.textContent =
+      "Sorry, your browser does not support Speech Recognition.";
+    return;
+  }
+
+  var recognition = new SpeechRecognition();
+  recognition.lang = "en-US"; // You can change this to "hi-IN", "ta-IN", etc.
+
+  searchBox1.placeH = "Listening... Speak now.";
+  searchBox2.value = "Listening... Speak now.";
+  recognition.start();
+
+  recognition.onresult = function (event) {
+    var transcript = event.results[0][0].transcript;
+    searchBox1.value = transcript;
+    searchBox2.value = transcript;
+
+    while (main_body.firstChild) {
+      main_body.removeChild(main_body.firstChild);
+    }
+    let resultData;
+    if (opt.value == "Song") {
+      resultData = data.filter(({ title }) =>
+        title.toLowerCase().includes(transcript.toLowerCase())
+      );
+    } else {
+      resultData = data.filter(({ author }) =>
+        author.toLowerCase().includes(transcript.toLowerCase())
+      );
+    }
+    main_body.innerHTML = resultData
+      .map((ele) => {
+        let ele_title = ele.title.split(",");
+        let ele_author = ele.author.split(",");
+        return `
+<div class="songs flex flex-col items-center m-3">
+            <div
+            id="${ele.id}"
+              class="img_part w-[130px] h-[130px] flex justify-around items-center rounded-2xl"
+              onclick="playing.apply(this,arguments)"
+          style="background-image: url(${ele.img});"
+            >
+              <div
+                id="${ele.id}"
+                class="play_btn w-[40px] h-[40px] rounded-4xl flex items-center justify-center bg-red-500"
+                
+                >
+                <i
+                id="${ele.id}"
+                  class="fa-solid fa-play fa-lg ml-3.5 mt-5"
+                  style="color: #fff"
+                  
+                ></i>
+              </div>
+            </div>
+           
+              ${
+                ele_title[0].length < 11
+                  ? `<h1
+              class="text-[15px] h11"
+              style="
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+                  serif;
+              "
+            >${ele_title[0]}</h1>`
+                  : `<h1
+              class="text-[15px] h11"
+              style="
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+                  serif;
+              "
+            >${ele_title[0].slice(0, 10)}...</h1>`
+              }
+           
+            <h1 class="text-[12px] h12">${ele_author[0]}</h1>
+
+          </div>
+`;
+      })
+      .join("");
+  };
+
+  recognition.onerror = function (event) {
+    alert("Error occurred: " + event.error);
+  };
+
+  recognition.onend = function () {
+    console.log("Recognition ended.");
+  };
+}
