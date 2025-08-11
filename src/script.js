@@ -4,6 +4,34 @@ let info = document.getElementById("songinfo");
 
 let fullData = [
   {
+    img: "https://c.saavncdn.com/685/Indru-Netru-Naalai-Tamil-2015-500x500.jpg",
+    title: "Kadhale Kadhale,KadhaleKadhale",
+    author: "Hip Hop Tamizha",
+    link: "https://github.com/user-attachments/assets/14e3660a-a6ef-41b2-9e76-56a61da41b2c",
+    count: "0",
+  },
+  {
+    img: "https://c.saavncdn.com/685/Indru-Netru-Naalai-Tamil-2015-500x500.jpg",
+    title: "Indru Netru Naalai",
+    author: "Hip Hop Tamizha",
+    link: "https://github.com/user-attachments/assets/2a069c25-f963-4cd6-810f-3de3f368517a",
+    count: "0",
+  },
+  {
+    img: "https://c.saavncdn.com/685/Indru-Netru-Naalai-Tamil-2015-500x500.jpg",
+    title: "Naane Thaan Raja",
+    author: "Hip Hop Tamizha",
+    link: "https://github.com/user-attachments/assets/2995a7aa-69c3-40cb-8eeb-d754d7f4e972",
+    count: "0",
+  },
+  {
+    img: "https://c.saavncdn.com/685/Indru-Netru-Naalai-Tamil-2015-500x500.jpg",
+    title: "iPhone 6 Nee Yendral",
+    author: "Hip Hop Tamizha",
+    link: "https://github.com/user-attachments/assets/7fc8c5b3-d114-44fb-8ae9-4504088140fa",
+    count: "0",
+  },
+  {
     img: "https://tse4.mm.bing.net/th?id=OIP.AtAI0H9sQZpMmeRsGXHavQHaHa&pid=Api&P=0&h=180",
     title: "Kaavala,kavala",
     author: "Anirudh",
